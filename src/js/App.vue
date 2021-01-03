@@ -1,6 +1,7 @@
 <template>
   <div>
       <h2>{{name}}</h2>
+      <p>傻逼webpack，不多说配置了一晚上</p>
       <button @click="click">按钮</button>
   </div>
 </template>
@@ -14,7 +15,7 @@ export default {
   },
   methods:{
     click(){
-      
+
     }
   }
 }

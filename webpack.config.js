@@ -2,6 +2,8 @@ const { name } = require("file-loader");
 const path = require("path");
 const webpack = require("webpack");
 const html = require("html-webpack-plugin");
+const uglifiyjswebpackOlugin = require("uglifyjs-webpack-plugin");
+
 module.exports = {
   //入口
   entry : "./src/main.js",
@@ -77,7 +79,13 @@ module.exports = {
     new webpack.BannerPlugin("最终版权归梁珏馨所有"),
     new html({
       template:"index.html"
-    })
-  ]
+    }),
+    //压缩 
+    new uglifiyjswebpackOlugin()
+  ],
+  devServer:{
+    contentBase:"./dist",
+    inline:true
+  }
 
 }
