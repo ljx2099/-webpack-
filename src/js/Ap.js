@@ -1,4 +1,4 @@
-export default 
+/*export default 
 {
   template :`
   <div>
@@ -16,4 +16,4 @@ export default
     }
   }
 
-}
+}*/

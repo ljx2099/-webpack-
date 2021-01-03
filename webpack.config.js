@@ -1,6 +1,7 @@
 const { name } = require("file-loader");
 const path = require("path");
-
+const webpack = require("webpack");
+const html = require("html-webpack-plugin");
 module.exports = {
   //入口
   entry : "./src/main.js",
@@ -9,7 +10,6 @@ module.exports = {
     //path系统模块用于获取路径
     path : path.resolve(__dirname,"dist"),
     filename: "main-dev.js",
-    publicPath:"dist/"
   },
   module:{
     rules:[
@@ -72,6 +72,12 @@ module.exports = {
     },
     //配置文件拓展名 import时候可省略后缀
     extensions:[".js",".css",".vue"]
-  }
+  },
+  plugins:[
+    new webpack.BannerPlugin("最终版权归梁珏馨所有"),
+    new html({
+      template:"index.html"
+    })
+  ]
 
 }
